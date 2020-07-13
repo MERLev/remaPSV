@@ -842,24 +842,6 @@ void applyRemap(SceCtrlData *ctrl) {
 		if (motionstate.deviceQuat.z > 0)
 			applyRemapRuleForGyro(PHYS_BUTTONS_NUM + 21, &new_map, stickpos,
 			-motionstate.deviceQuat.z * gyro_options[2] * 4);
-		/*if (motionstateCache.deviceQuat.y - motionstate.deviceQuat.y > 0)
-			applyRemapRuleForGyro(PHYS_BUTTONS_NUM + 16, &new_map, stickpos,
-				(motionstateCache.deviceQuat.y - motionstate.deviceQuat.y) * gyro_options[0] * 4);
-		if (motionstateCache.deviceQuat.y - motionstate.deviceQuat.y < 0)
-			applyRemapRuleForGyro(PHYS_BUTTONS_NUM + 17, &new_map, stickpos,
-				-(motionstateCache.deviceQuat.y - motionstate.deviceQuat.y) * gyro_options[0] * 4);
-		if (motionstateCache.deviceQuat.x - motionstate.deviceQuat.x > 0)
-			applyRemapRuleForGyro(PHYS_BUTTONS_NUM + 18, &new_map, stickpos,
-				(motionstateCache.deviceQuat.x - motionstate.deviceQuat.x) * gyro_options[1] * 4);
-		if (motionstateCache.deviceQuat.x - motionstate.deviceQuat.x < 0)
-			applyRemapRuleForGyro(PHYS_BUTTONS_NUM + 19, &new_map, stickpos,
-				-(motionstateCache.deviceQuat.x - motionstate.deviceQuat.x) * gyro_options[1] * 4);
-		if (motionstateCache.deviceQuat.z - motionstate.deviceQuat.z > 0)
-			applyRemapRuleForGyro(PHYS_BUTTONS_NUM + 20, &new_map, stickpos,
-				(motionstateCache.deviceQuat.z - motionstate.deviceQuat.z) * gyro_options[2] * 4);
-		if (motionstateCache.deviceQuat.z - motionstate.deviceQuat.z < 0)
-			applyRemapRuleForGyro(PHYS_BUTTONS_NUM + 21, &new_map, stickpos,
-				-(motionstateCache.deviceQuat.z - motionstate.deviceQuat.z) * gyro_options[2] * 4);*/
 	}
 
 	// Nulling analogs if they're remapped		
@@ -1497,7 +1479,7 @@ void configInputHandler(SceCtrlData *ctrl) {
 				} else if (menu_i == GYRO_MENU) {
 					if (cfg_i == 7)
 						sceMotionReset();
-					}
+				}
 				break;
 			case SCE_CTRL_CIRCLE:
 				if (menu_i == MAIN_MENU) {
@@ -1801,7 +1783,6 @@ int sceTouchPeek2_patched(SceUInt32 port, SceTouchData *pData, SceUInt32 nBufs) 
 	return retouch(port, pData, ret, 3);
 }
 
-	sceMotionSetTiltCorrection(0);
 int sceDisplaySetFrameBuf_patched(const SceDisplayFrameBuf *pParam, int sync) {
 	if (show_menu) {
 		new_frame = 1;
