@@ -844,6 +844,8 @@ void ui_inputHandler(SceCtrlData *ctrl) {
 						profile_saveGlobal();			
 					} else if (cfg_i == PROFILE_SETTINGS_NUM + 3) {
 						profile_loadGlobal();			
+					} else if (cfg_i == PROFILE_SETTINGS_NUM + 4) {
+						profile_savePS4Link();			
 					}
 				} else if (menu_i == GYRO_MENU) {
 					if (cfg_i == 10)
