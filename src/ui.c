@@ -104,7 +104,8 @@ static char* str_settings[] = {
 	"Save as Game profile", 
 	"Load Game profile", 
 	"Save as Global profile", 
-	"Load Global profile"
+	"Load Global profile",
+	"Save as PS4 Link profile"
 };
 
 static char* str_funcs[HOOKS_NUM-1] = {
