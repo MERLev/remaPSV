@@ -24,7 +24,7 @@
 ## Installation
 
 - Copy **remaPSV2.suprx** and **ioplus.skprx** to **ur0:/tai** folder 
-- Add **remaPSV2.suprx** into your **ur0:/config.ini** file (under ***ALL** or whatever game you want to use it).
+- Add **remaPSV2.suprx** into your **ur0:/tai/config.txt** file (under ***ALL** or whatever game you want to use it).
 - Add **ioplus.skprx** into your taiHen config file (under ***KERNEL**)
 - To bring the config menu, press **START + Square** in game.
 
