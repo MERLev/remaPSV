@@ -1,4 +1,6 @@
 # remaPSV2 v.2.0.2
+# !!! Project is obsolete and unsupported, use [reVita](https://github.com/MERLev/reVita) instead.
+
 **remaPSV2** is an updated version of [Rinnegatamante](https://github.com/Rinnegatamante)'s **[remaPSV](https://github.com/Rinnegatamante/remaPSV)** (which takes the name from the glorious remaPSP included in cwCheat for PSP). 
 
 ![Image](/include/screenshot.png)
