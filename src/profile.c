@@ -169,6 +169,44 @@ void profile_saveLocal() {
 	sceIoClose(fd);
 }
 
+void profile_savePS4Link() {
+	SceUID fd;
+	// Just in case the folder doesn't exist
+	sceIoMkdir("ux0:/data/remaPSV", 0777); 
+	sprintf(fname, "ux0:/data/remaPSV/NPXS10013");
+	sceIoMkdir(fname, 0777);
+	
+	// Opening remap config file and saving it
+	sprintf(fname, "ux0:/data/remaPSV/NPXS10013/remap.bin");
+	fd = sceIoOpen(fname, SCE_O_WRONLY | SCE_O_CREAT | SCE_O_TRUNC, 0777);
+	sceIoWrite(fd, profile_remap, PROFILE_REMAP_NUM);
+	sceIoClose(fd);
+	
+	// Opening analog config file and saving the config
+	sprintf(fname, "ux0:/data/remaPSV/NPXS10013/analogs.bin");
+	fd = sceIoOpen(fname, SCE_O_WRONLY | SCE_O_CREAT | SCE_O_TRUNC, 0777);
+	sceIoWrite(fd, profile_analog, PROFILE_ANALOG_NUM);
+	sceIoClose(fd);
+	
+	// Opening touch config file and saving the config
+	sprintf(fname, "ux0:/data/remaPSV/NPXS10013/touch.bin");
+	fd = sceIoOpen(fname, SCE_O_WRONLY | SCE_O_CREAT | SCE_O_TRUNC, 0777);
+	sceIoWrite(fd, profile_touch, PROFILE_TOUCH_NUM*2);
+	sceIoClose(fd);
+	
+	// Opening gyro config file and saving the config
+	sprintf(fname, "ux0:/data/remaPSV/NPXS10013/gyro.bin");
+	fd = sceIoOpen(fname, SCE_O_WRONLY | SCE_O_CREAT | SCE_O_TRUNC, 0777);
+	sceIoWrite(fd, profile_gyro, PROFILE_GYRO_NUM);
+	sceIoClose(fd);
+	
+	// Opening gyro config file and saving the config
+	sprintf(fname, "ux0:/data/remaPSV/NPXS10013/controllers.bin");
+	fd = sceIoOpen(fname, SCE_O_WRONLY | SCE_O_CREAT | SCE_O_TRUNC, 0777);
+	sceIoWrite(fd, profile_controller, PROFILE_CONTROLLER_NUM);
+	sceIoClose(fd);
+}
+
 void profile_loadGlobal() {
 	profile_resetRemap();
 	profile_resetAnalog();

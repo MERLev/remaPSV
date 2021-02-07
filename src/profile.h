@@ -35,6 +35,7 @@ extern void profile_saveSettings();
 extern void profile_loadSettings();
 extern void profile_saveGlobal();
 extern void profile_saveLocal();
+extern void profile_savePS4Link();
 extern void profile_loadGlobal();
 extern void profile_loadLocal();
 
